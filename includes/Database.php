@@ -13,7 +13,6 @@ class Database {
         if ($mysqli->connect_errno) {
             die("Fallo al conectar a la Base de Datos: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error);
         } else {
-            echo "Exito!";
             return $mysqli;
         }
     }
