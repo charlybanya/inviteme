@@ -1,10 +1,4 @@
 <?php
-
-/**
- * Description of Database
- *
- * @author root
- */
 class Database {
 
     public function createConnection() {
