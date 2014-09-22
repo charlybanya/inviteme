@@ -61,7 +61,9 @@ use Facebook\GraphUser;
             // get response
             $graphObject = $response->getGraphObject(GraphUser::className());
             // print data
-            $_SESSION['graphObjectArray'] = (array) $graphObject;
+            $fbData = (array) $graphObject;
+            $arrKeys = array_keys($fbData);
+            $_SESSION['graphObjectArray'] = $fbData[$arrKeys[0]];
             /* $_SESSION['graphObjectArray'] = array(
               'id' => '10202611455349527',
               'email' => 'charly_banya@hotmail.com',
