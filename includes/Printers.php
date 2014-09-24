@@ -1,11 +1,12 @@
 <?php
+include 'Lists.php';
 
 class Printers {
 
     public function reviewData($graphObjectArray) {
-        /*echo '<pre>';
-        var_dump($graphObjectArray);
-        echo '</pre>';*/
+        /* echo '<pre>';
+          var_dump($graphObjectArray);
+          echo '</pre>'; */
         $labels = array(
             'Primer Nombre' => 'first_name',
             'Segundo Nombre' => 'middle_name',
@@ -23,9 +24,11 @@ class Printers {
                 echo "\t\t" . $key . ': <input type = "text" name = "' . $value . '" required ><br />' . "\n";
             }
         }
-        echo "\t\t".'<input type = "checkbox" name = "verified" required >Acepto los Terminos y Condiciones de Uso <br />'."\n";
-        echo "\t\t".'<input type = "submit" value = "Guardar">'."\n";
+        getStatesList();
+        echo "\t\t" . '<input type = "checkbox" name = "verified" required >Acepto los Terminos y Condiciones de Uso <br />' . "\n";
+        echo "\t\t" . '<input type = "submit" value = "Guardar">' . "\n";
         echo "\t" . '</form>' . "\n";
     }
+
 
 }

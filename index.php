@@ -33,58 +33,18 @@ use Facebook\GraphUser;
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="css/colorbox.css" rel="stylesheet" type="text/css">
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/jquery.form.min.js"></script>
+        <script src="js/jquery.colorbox-min.js"></script>
         <script src="js/inviteme.js"></script>
-        <title>prickie.com.mx</title>
+        <title>www.prickie.com.mx</title>
     </head>
     <body>
         <?php
-        // init app with app id (APPID) and secret (SECRET)
         FacebookSession::setDefaultApplication('848341915184985', '746f5977bece9cfe41956dd3a22877f6');
-
-        // login helper with redirect_uri
-        $helper = new FacebookRedirectLoginHelper('http://www.telmexhub.com.mx/inviteme', '848341915184985', '746f5977bece9cfe41956dd3a22877f6');
-        try {
-            $session = $helper->getSessionFromRedirect();
-        } catch (FacebookRequestException $ex) {
-            
-        } catch (Exception $ex) {
-            
-        }
-
-        // see if we have a session
-        if (isset($session)) {
-            // graph api request for user data
-            $request = new FacebookRequest($session, 'GET', '/me');
-            $response = $request->execute();
-            // get response
-            $graphObject = $response->getGraphObject(GraphUser::className());
-            // print data
-            $fbData = (array) $graphObject;
-            $arrKeys = array_keys($fbData);
-            $_SESSION['graphObjectArray'] = $fbData[$arrKeys[0]];
-            /* $_SESSION['graphObjectArray'] = array(
-              'id' => '10202611455349527',
-              'email' => 'charly_banya@hotmail.com',
-              'first_name' => 'Cristopher',
-              'gender' => 'male',
-              'last_name' => 'Mendoza',
-              'link' => 'https://www.facebook.com/app_scoped_user_id/10202611455349527/',
-              'locale' => 'es_LA',
-              'middle_name' => 'Carlos',
-              'name' => 'Cristopher Carlos Mendoza',
-              'timezone' => -5,
-              'updated_time' => '2014-02-12T22:44:50+0000',
-              'verified' => true
-              ); */
-
-            $print = new Printers();
-            $print->reviewData($_SESSION['graphObjectArray']);
-        } else {
-            // show login url
-            echo '<a href="' . $helper->getLoginUrl(array('scope' => 'email')) . '">Login</a>';
-        }
+        $helper = new FacebookRedirectLoginHelper('http://www.telmexhub.com.mx/inviteme/fbRedirect.php', '848341915184985', '746f5977bece9cfe41956dd3a22877f6');
+        echo '<a href="' . $helper->getLoginUrl(array('scope' => 'email')) . '" >Login</a>';
         ?>
     </body>
 </html>
