@@ -73,7 +73,7 @@ a{
 .clr{
 	clear: both;
 }
-.container > header{
+.container {
 	padding: 30px 30px 10px 20px;
 	margin: 0px 20px 10px 20px;
 	position: relative;
@@ -81,7 +81,7 @@ a{
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     text-align: left;
 }
-.container > header h1{
+.container  h1{
 	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
 	font-size: 35px;
 	line-height: 35px;
@@ -91,10 +91,10 @@ a{
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     padding: 0px 0px 5px 0px;
 }
-.container > header h1 span{
+.container  h1 span{
 
 }
-.container > header h2, p.info{
+.container  h2, p.info{
 	font-size: 16px;
 	font-style: italic;
 	color: #f8f8f8;
@@ -184,7 +184,7 @@ p.codrops-demos a.current-demo:hover{
 }
 /* Media Queries */
 @media screen and (max-width: 767px) {
-	.container > header{
+	.container {
 		text-align: center;
 	}
 	p.codrops-demos {
