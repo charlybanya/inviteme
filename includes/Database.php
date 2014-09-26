@@ -21,9 +21,20 @@ class Database {
         if (!$con->query($query)) {
             echo '{ "message": "Hubo un problema al momento de crear el Registro, INFO: ' . str_replace('\'', '', $con->error) . $query . ' "}';
         } else {
-            echo '{ "message": "Tus Datos han sido almacenados con exito", "nextStep" : "/inviteme/index.php"}';
+            echo '{ "message": "Tus Datos han sido almacenados con exito", "nextStep" : "/site/index.php"}';
         }
         $con->close();
+    }
+
+    public function checkRegister($fbid) {
+        $con = new Database();
+        $query = 'SELECT * FROM jugadores WHERE fbid = ' . $fbid;
+        $exec = $con->createConnection()->query($query);
+        if (count($resultado = $exec->fetch_assoc())) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 
 }

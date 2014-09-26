@@ -1,7 +1,7 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', true);
+//error_reporting(E_ALL);
+//ini_set('display_errors', true);
 require_once('Facebook/FacebookSession.php');
 require_once('Facebook/FacebookRedirectLoginHelper.php');
 require_once('Facebook/FacebookRequest.php');
@@ -44,8 +44,11 @@ use Facebook\GraphUser;
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/clock.css" />
         <link rel="stylesheet" type="text/css" href="css/style4.css" />
         <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="//cdn.rawgit.com/hilios/jQuery.countdown/2.0.4/dist/jquery.countdown.min.js"></script>
         <script src="js/inviteme.js"></script>
     </head>
     <body id="page">
@@ -58,13 +61,28 @@ use Facebook\GraphUser;
             <li><span>Image 06</span><div><h3>A·Los·Mejores·Eventos</h3></div></li>
         </ul>
         <div class="container">
-            <h1><span>¡Ya no hay pretextos para no ir al concierto que siempre esperaste!</span></h1>
-            <h2>Descubre la nueva forma de comprar boletos</h2>
-            <br><br><br><br><br><br>
+            <h1><span>¿QUIERES IR AL CORONA CAPITAL POR 1 PESO?</span></h1>
+            <h2>PRONTO TE DIREMOS COMO</h2>
+            <br><br><br>
             <?php
             FacebookSession::setDefaultApplication('848341915184985', '746f5977bece9cfe41956dd3a22877f6');
             $helper = new FacebookRedirectLoginHelper('http://www.prickie.com.mx/site/fbRedirect.php', '848341915184985', '746f5977bece9cfe41956dd3a22877f6');
             echo '<a class="fb-connect button" href="' . $helper->getLoginUrl(array('scope' => 'email,user_friends')) . '" ></a>';
-            ?>     </div>
+            ?>
+            <br><br>
+            <div class="example-base">
+                <h4>Preparate ...<br>
+                    <span id="clock"></span>
+            </div>
+            <script type="text/javascript">
+                $('#clock').countdown(new Date(Date.UTC(2014, 9, 29, 21, 0, 0))).on('update.countdown', function(event) {
+                    var $this = $(this).html(event.strftime(''
+                            + '%-d día%!d '
+                            + '%H hr '
+                            + '%M min '
+                            + '%S seg</h4>'));
+                });
+            </script>
+        </div>
     </body>
 </html>

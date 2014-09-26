@@ -1,3 +1,13 @@
+label {
+    color: whitesmoke;
+}
+.form-control {
+    text-align:center;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
 .cb-slideshow,
 .cb-slideshow:after {
     position: fixed;
@@ -365,10 +375,22 @@
     .cb-slideshow li div h3 { font-size: 45px;
                               line-height: 25px;
     }
+
+    .form-control {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%
+    }
 }
 @media screen and (max-width: 600px) { 
     .cb-slideshow li div h3 { font-size: 30px;
                               line-height: 10px;
+    }
+
+    .form-control {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
     }
 }
 
