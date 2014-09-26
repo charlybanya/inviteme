@@ -1,5 +1,7 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', true);
 require_once('Facebook/FacebookSession.php');
 require_once('Facebook/FacebookRedirectLoginHelper.php');
 require_once('Facebook/FacebookRequest.php');
@@ -42,45 +44,19 @@ use Facebook\GraphUser;
     </head>
     <body>
         <?php
-        // init app with app id (APPID) and secret (SECRET)
         FacebookSession::setDefaultApplication('848341915184985', '746f5977bece9cfe41956dd3a22877f6');
-
-        // login helper with redirect_uri
-        $helper = new FacebookRedirectLoginHelper('http://www.telmexhub.com.mx/inviteme/fbRedirect.php', '848341915184985', '746f5977bece9cfe41956dd3a22877f6');
-        try {
-            $session = $helper->getSessionFromRedirect();
-        } catch (FacebookRequestException $ex) {
-            
-        } catch (Exception $ex) {
-            
-        }
-        // see if we have a session
+        $helper = new FacebookRedirectLoginHelper('http://www.prickie.com.mx/site/fbRedirect.php', '848341915184985', '746f5977bece9cfe41956dd3a22877f6');
+        $session = $helper->getSessionFromRedirect();
         if (isset($session)) {
-            // graph api request for user data
             $request = new FacebookRequest($session, 'GET', '/me');
             $response = $request->execute();
-            // get response
             $graphObject = $response->getGraphObject(GraphUser::className());
-            // print data
             $fbData = (array) $graphObject;
             $arrKeys = array_keys($fbData);
             $_SESSION['graphObjectArray'] = $fbData[$arrKeys[0]];
-            /* $_SESSION['graphObjectArray'] = array(
-              'id' => '10202611455349527',
-              'email' => 'charly_banya@hotmail.com',
-              'first_name' => 'Cristopher',
-              'gender' => 'male',
-              'last_name' => 'Mendoza',
-              'link' => 'https://www.facebook.com/app_scoped_user_id/10202611455349527/',
-              'locale' => 'es_LA',
-              'middle_name' => 'Carlos',
-              'name' => 'Cristopher Carlos Mendoza',
-              'timezone' => -5,
-              'updated_time' => '2014-02-12T22:44:50+0000',
-              'verified' => true
-              ); */
             $print = new Printers();
             $print->reviewData($_SESSION['graphObjectArray']);
-        }else{
-            echo "Sesion Invalida";
+        } else {
+            header('Location: index.php');
         }
+        ?>

@@ -1,15 +1,15 @@
 <?php
+
 include 'Lists.php';
 
 class Printers {
 
     public function reviewData($graphObjectArray) {
-        /* echo '<pre>';
-          var_dump($graphObjectArray);
-          echo '</pre>'; */
+        /*echo '<pre>';
+        var_dump($graphObjectArray);
+        echo '</pre>';*/
         $labels = array(
-            'Primer Nombre' => 'first_name',
-            'Segundo Nombre' => 'middle_name',
+            'Nombre' => 'first_name',
             'Apellidos' => 'last_name',
             'Correo Electronico' => 'email',
             'Nombre para mostrar' => 'name',
@@ -29,6 +29,5 @@ class Printers {
         echo "\t\t" . '<input type = "submit" value = "Guardar">' . "\n";
         echo "\t" . '</form>' . "\n";
     }
-
 
 }
