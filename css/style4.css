@@ -396,6 +396,4 @@ label {
 
 /*Login Button*/
 
-.fb-connect{display:inline-block;background:url(../images/connectButton.png) -300px 0 no-repeat;height:60px;width:255px}
-.fb-connect:hover{background-position:-300px -100px}
-.fb-connect:active{background-position:-300px -200px}
+.fb-connect{display:inline-block;background:url(../images/connectButton.jpg);height:60px;width:255px}

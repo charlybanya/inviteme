@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `jugadores` (
   `username` varchar(35) NOT NULL,
   `created_time` datetime NOT NULL,
   `gender` varchar(10) NOT NULL,
-  `address` varchar(60) NOT NULL,
-  `estado` varchar(40) NOT NULL,
+  `tel` varchar(20) NOT NULL,
+  `idestados` int(2) NOT NULL,
   `verified` tinyint(1) NOT NULL
 ) ENGINE=InnoDB ;
 --

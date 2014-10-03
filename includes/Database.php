@@ -16,12 +16,12 @@ class Database {
         $con = Database::createConnection();
         $query = "INSERT INTO jugadores VALUES (" . $data['id'] . ", '" . $data['email'] . "',"
                 . " '" . $data['first_name'] . "', '" . $data['middle_name'] . "', '" . $data['last_name'] . "', '" . $data['name'] . "', "
-                . "'" . date("Y-m-d H:i:s") . "', '" . $data['gender'] . "', '" . $data['address'] . "', "
+                . "'" . date("Y-m-d H:i:s") . "', '" . $data['gender'] . "', '" . $data['tel'] . "', "
                 . " " . $data['estado'] . " , '1' )";
         if (!$con->query($query)) {
             echo '{ "message": "Hubo un problema al momento de crear el Registro, INFO: ' . str_replace('\'', '', $con->error) . $query . ' "}';
         } else {
-            echo '{ "message": "Tus Datos han sido almacenados con exito", "nextStep" : "/site/index.php"}';
+            echo '{ "message": "Tus Datos han sido almacenados con exito", "nextStep" : "/site/index2.php"}';
         }
         $con->close();
     }
@@ -35,6 +35,42 @@ class Database {
         } else {
             return FALSE;
         }
+    }
+
+    public function checkSorteo($id) {
+        $con = new Database();
+        $query = 'SELECT * FROM eventos WHERE ideventos = ' . $id;
+        $exec = $con->createConnection()->query($query);
+        if (count($resultado = $exec->fetch_assoc())) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function getProfile($id) {
+        $con = new Database();
+        $query = 'SELECT * FROM jugadores WHERE fbid = ' . $id;
+        $exec = $con->createConnection()->query($query);
+        $resultado = $exec->fetch_assoc();
+        return $resultado;
+    }
+
+    public function updateData($data) {
+        $con = Database::createConnection();
+        $query = "UPDATE jugadores set first_name = '" . $data['first_name'] . "', "
+                . "last_name = '" . $data['last_name'] . "', "
+                . "email = '" . $data['email'] . "', "
+                . "username = '" . $data['username'] . "', "
+                . "tel = '" . $data['tel'] . "', "
+                . "idestados = " . $data['estado']
+                . " WHERE fbid = " . $data['id'];
+        if (!$con->query($query)) {
+            echo '{ "message": "Hubo un problema al momento de crear el Registro, INFO: ' . str_replace('\'', '', $con->error) . $query . ' "}';
+        } else {
+            echo '{ "message": "Tus Datos han sido actualizados con exito", "nextStep" : "/site/index2.php"}';
+        }
+        $con->close();
     }
 
 }

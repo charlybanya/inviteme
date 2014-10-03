@@ -2,14 +2,26 @@ h4 {
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
     font-size: 70px;
     padding: 0;
-    line-height: 50px;
+    line-height: 60px;
     color: #F49600;
 }
 
 @media screen and (max-width: 1140px) {
-    h4 {font-size: 50px}
+    h4 {font-size: 45px; line-height: 47px;}
+    .container  h1{
+        font-size: 48px;
+    }
+    .container h2{
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    h4 {font-size: 30px}
+    h4 {font-size: 38px; line-height: 40px;}
+    .container  h1{
+        font-size: 40px;
+    }
+    .container h2{
+        font-size: 15px;
+    }
 }

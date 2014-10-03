@@ -42,48 +42,64 @@ use Facebook\GraphUser;
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <title>www.prickie.com.mx</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <!-- Latest compiled and minified CSS  -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style4.css" />
-        <link rel="stylesheet" type="text/css" href="css/clock.css" />
-        <link rel="stylesheet" type="text/css" href="css/form.css" />
-        <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
-        <script src="js/jquery-1.11.0.min.js"></script>
-        <script src="js/jquery.form.min.js"></script>
-        <script src="//cdn.rawgit.com/hilios/jQuery.countdown/2.0.4/dist/jquery.countdown.min.js"></script>
-        <script src="js/inviteme.js"></script>
+        <!-- Facebook Conversion Code for pixel registro 1 -->
+        <script>(function() {
+                var _fbq = window._fbq || (window._fbq = []);
+                if (!_fbq.loaded) {
+                    var fbds = document.createElement('script');
+                    fbds.async = true;
+                    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(fbds, s);
+                    _fbq.loaded = true;
+                }
+            })();
+            window._fbq = window._fbq || [];
+            window._fbq.push(['track', '6021411218355', {'value': '0.00', 'currency': 'MXN'}]);
+        </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021411218355&amp;cd[value]=0.00&amp;cd[currency]=MXN&amp;noscript=1" /></noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Latest compiled and minified CSS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="css/demofb.css" />
+    <link rel="stylesheet" type="text/css" href="css/style4.css" />
+    <link rel="stylesheet" type="text/css" href="css/clock.css" />
+    <link rel="stylesheet" type="text/css" href="css/form.css" />
+    <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script src="//cdn.rawgit.com/hilios/jQuery.countdown/2.0.4/dist/jquery.countdown.min.js"></script>
+    <script src="js/inviteme.js"></script>
 
-    </head>
-    <body id="page">
-        <ul class="cb-slideshow">
-            <li><span>Image 01</span><div><h3>Con·Prickie</h3></div></li>
-            <li><span>Image 02</span><div><h3>·Asiste·</h3></div></li>
-            <li><span>Image 03</span><div><h3>A·Los·Mejores·Eventos</h3></div></li>
-            <li><span>Image 04</span><div><h3>Con·Prickie</h3></div></li>
-            <li><span>Image 05</span><div><h3>·Asiste·</h3></div></li>
-            <li><span>Image 06</span><div><h3>A·Los·Mejores·Eventos</h3></div></li>
-        </ul>
-        <div class="container">
-            <h1><span>¿QUIERES IR AL CORONA CAPITAL POR 1 PESO?</span></h1>
-            <h2>PRONTO TE DIREMOS COMO</h2>
-            <br><br><br>
-            <?php
-            FacebookSession::setDefaultApplication('848341915184985', '746f5977bece9cfe41956dd3a22877f6');
-            $helper = new FacebookRedirectLoginHelper('http://www.prickie.com.mx/site/fbRedirect.php', '848341915184985', '746f5977bece9cfe41956dd3a22877f6');
-            try{
+</head>
+<body id="page">
+    <ul class="cb-slideshow">
+        <li><span>Image 01</span></li>
+        <li><span>Image 02</span></li>
+        <li><span>Image 03</span></li>
+        <li><span>Image 04</span></li>
+        <li><span>Image 05</span></li>
+        <li><span>Image 06</span></li>
+    </ul>
+    <div class="container">
+        <h1><span>¿QUIERES IR AL CORONA CAPITAL POR 1 PESO?</span></h1>
+        <h2>PRONTO TE DIREMOS CÓMO</h2>
+        <br><br><br>
+        <?php
+        FacebookSession::setDefaultApplication('848341915184985', '746f5977bece9cfe41956dd3a22877f6');
+        $helper = new FacebookRedirectLoginHelper('http://www.prickie.com.mx/site/fbRedirect.php', '848341915184985', '746f5977bece9cfe41956dd3a22877f6');
+        try {
             $session = $helper->getSessionFromRedirect();
-            }  catch (\Facebook\FacebookAuthorizationException $ex){
-                header('Location: index.php');
-            }
+        } catch (\Facebook\FacebookAuthorizationException $ex) {
+            header('Location: index.php');
+        }
 
-            if (isset($session)) {
+        if (isset($session)) {
             $request = new FacebookRequest($session, 'GET', '/me');
             $response = $request->execute();
             $graphObject = $response->getGraphObject(GraphUser::className());
@@ -93,31 +109,15 @@ use Facebook\GraphUser;
             $print = new Printers();
             $check = new Database();
             if ($check->checkRegister($_SESSION['graphObjectArray']['id'])) {
-            echo "<h4>Ya estas registrado<h4>";
-            ?>
-            <br><br>
-            <div class="example-base">
-                <h4>Preparate ...<br>
-                    <span id="clock"></span>
-            </div>
-            <script type="text/javascript">
-                $('#clock').countdown(new Date(Date.UTC(2014, 9, 29, 21, 0, 0))).on('update.countdown', function(event) {
-                    var $this = $(this).html(event.strftime(''
-                            + '%-d día%!d '
-                            + '%H hr '
-                            + '%M min '
-                            + '%S seg</h4>'));
-                });
-            </script>
-
-            <?php
+                header('Location: index2.php');
+                echo "<h4>Ya estas registrado<h4>";
             } else {
-            $print->reviewData($_SESSION['graphObjectArray']);
+                $print->reviewData($_SESSION['graphObjectArray']);
             }
-            } else {
+        } else {
             header('Location: index.php');
-            }
-            ?>
-        </div>
-    </body>
+        }
+        ?>
+    </div>
+</body>
 </html>

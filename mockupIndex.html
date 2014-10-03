@@ -1,0 +1,47 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Prickie</title>
+        <link href="boilerplate.css" rel="stylesheet" type="text/css">
+        <link href="css/prickie.css" rel="stylesheet" type="text/css">
+        <link href="css/concursos.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="respond.min.js"></script>
+    </head>
+    <body>
+        <div class="gridContainer clearfix">
+            <div id="header">
+                <div id="userData">
+                    <div id="userPoints">
+                        puntos
+                    </div>
+                    <div id="userPicture">
+                        picture
+                    </div>
+                </div>
+            </div>
+            <div id="menu">
+                <a href="index.php?section=profile" >Mi Perfil</a>
+                <a href="index.php?section=concursos" >Mis Concursos</a>
+                <a href="index.php?section=saldo" >Saldo</a>
+                <a href="index.php?section=invitaciones" >Invitaciones</a>
+            </div>
+            <div id="separator">¡Gana los boletos de tu vida pagando desde $1!</div>
+            <div id="contenido">
+                <form action="https://www.compropago.com/comprobante" method="post"><input type="hidden" name="public_key" value="pk_test_82fd5f1414239e60d"><input type="hidden" name="product_price" value="150.00"><input type="hidden" name="product_name" value="Compra de $150 de Saldo"><input type="hidden" name="product_id" value=""><input type="hidden" name="customer_name" value=""><input type="hidden" name="customer_email" value="correo@facebook.com"><input type="hidden" name="customer_phone" value=""><input type="hidden" name="image_url" value=""><input type="hidden" name="success_url" value=""><input type="hidden" name="failed_url" value=""><input type="image" src="https://www.compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago"></form>
+            </div>
+        </div>
+    </body>
+</html>

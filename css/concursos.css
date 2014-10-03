@@ -1,0 +1,85 @@
+/*++++++++++++++++++++++++ social media fest +++++++++++++++++++++++++++++++++++++++++++*/
+section#body-smf{
+    width: 100%;
+    margin: 0px auto;
+    overflow: hidden;
+    display: block;
+    float: right;
+}
+.card-smf{
+    display: inline-block;
+    padding-left:1%;
+    min-height: 590px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cardContent{
+    width: 240px;
+    overflow: hidden;
+    height: auto;
+}
+.cardDesc{
+    display: block;
+    float: left; 
+    display: none;
+    min-height: 120px;
+    overflow: hidden;
+    max-height: 225px;
+    min-width: 229px;
+    max-width: 237px;
+    background: #37d2ac;
+    color: #FFF;
+    padding: 4px;
+}
+@media screen and (max-width: 700px) {
+    .cardDesc img{ 
+        width: 50%;
+    }
+}
+/********************** single Card **************************/ 
+.socialmediafest{
+    padding: 80px 0;
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+    overflow: auto;
+}
+#body-smf2{
+    width: 85%;
+    margin: 0px auto;
+    overflow: hidden;
+    padding-left: 40px;
+}
+.card-smf-single{
+    display: block;
+}
+.menu-card{
+    overflow: hidden;
+}
+aside.contenido-menu-card{
+    display: inline-block;
+    float: left;
+    margin: 0px;
+    padding-left: 20px;
+}
+.card-text{
+    display: none;
+    padding-left: 15px;
+    background-color: rgba(0, 0, 0, 0.12);
+    margin: 0px;
+    width: 413px;
+    border: 2px;
+    border-color: rgba(0, 0, 0, 0.10);
+}
+.card-text a{
+    text-align: center;
+}
+.p-oculto{
+    margin-bottom: 10px;
+}
+
+h1{
+    text-align: center;
+}
